@@ -11,7 +11,8 @@ logging:
     root: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.example.boot.web.demo.feign.UserFeignClient: DEBUG        
+    com.example.boot.web.demo.feign.UserFeignClient: DEBUG 
+    org.hibernate: INFO       
 server:
   port: 8020
 
