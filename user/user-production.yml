@@ -1,0 +1,43 @@
+spring:  
+  application:
+    name: microservice-provider-movie-feign-hystrix-stream  
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  
+    com.example.boot.web.demo.feign.UserFeignClient: DEBUG           
+server:
+  port: 8020
+  servlet-path: /
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    
+MICROSERVICE-PROVIDER-USER:
+  ribbon: 
+    NFLoadBalancerRuleClassName: con.netflix.loadbalancer.RandomRule
+
+
+feign:
+  client:
+    config:
+      MICROSERVICE-PROVIDER-USER: 
+        loggerLevel: full
+  hystrix: 
+    enabled: true
+
+
+
+
+
