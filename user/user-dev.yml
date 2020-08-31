@@ -15,7 +15,7 @@ logging:
     com.example.boot.web.demo.feign.UserFeignClient: DEBUG           
 server:
   port: 8020
-# servlet-path: /
+
 
 eureka:
   client:
