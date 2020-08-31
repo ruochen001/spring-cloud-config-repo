@@ -6,13 +6,13 @@ spring:
     port: 5672
     username: guest
     password: guest
-logging:
-  level:
-    root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  
-    com.example.boot.web.demo.feign.UserFeignClient: DEBUG           
+# logging:
+#   level:
+#     root: INFO
+#     org.hibernate: INFO
+#     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  
+#     com.example.boot.web.demo.feign.UserFeignClient: DEBUG           
 server:
   port: 8020
   servlet-path: /

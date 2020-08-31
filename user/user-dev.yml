@@ -6,11 +6,11 @@ spring:
     port: 5672
     username: guest
     password: guest
-logging:
-  level:
-    root: INFO
-    org: 
-      hibernate: INFO
+# logging:
+#   level:
+#     root: INFO
+#     org: 
+#       hibernate: INFO
     # org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     # org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  
     # com.example.boot.web.demo.feign.UserFeignClient: DEBUG           
@@ -24,7 +24,7 @@ eureka:
       defaultZone: http://peer1:8761/eureka/
   instance:
     prefer-ip-address: true
-    
+       
 MICROSERVICE-PROVIDER-USER:
   ribbon: 
     NFLoadBalancerRuleClassName: con.netflix.loadbalancer.RandomRule
