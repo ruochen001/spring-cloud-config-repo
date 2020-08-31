@@ -8,6 +8,7 @@ spring:
     password: guest
 logging:
   level: 
+    org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.example.boot.web.demo.feign.UserFeignClient: DEBUG        
