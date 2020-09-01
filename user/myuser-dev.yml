@@ -3,7 +3,7 @@ management:
     enabled: false
 spring:
   application:
-    name: user 
+    name: myuser 
   jpa:
     generate-ddl: false
     show-sql: true
