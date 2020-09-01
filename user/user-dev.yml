@@ -1,42 +1,35 @@
-spring:  
+management:
+  security:
+    enabled: false
+spring:
   application:
-    name: microservice-provider-movie-feign-hystrix-stream  
-  rabbitmq:
-    host: 192.168.99.100
-    port: 5672
-    username: guest
-    password: guest
-logging:
-  level: 
+    name: user 
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                           # 指定数据源
+    platform: h2                        # 指定数据源类型
+    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
+    data: classpath:data.sql            # 指定h2数据库的数据脚本
+    sql-script-encoding: UTF-8
+    
+  http:
+    converters:
+      preferred-json-mapper: jackson
+  jackson:
+    time-zone: Asia/Shanghai
+    serialization:
+      indent-output: true
+      write-dates-as-timestamps: true
+    date-format: yyyy-MM-dd HH:mm:ss  
+    
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
     root: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.example.boot.web.demo.feign.UserFeignClient: DEBUG 
-server:
-  port: 8020
-
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer1:8761/eureka/
-  instance:
-    prefer-ip-address: true
-       
-MICROSERVICE-PROVIDER-USER:
-  ribbon: 
-    NFLoadBalancerRuleClassName: con.netflix.loadbalancer.RandomRule
-
-
-feign:
-  client:
-    config:
-      MICROSERVICE-PROVIDER-USER: 
-        loggerLevel: full
-  hystrix: 
-    enabled: true
-
-
-
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  
+    org.hibernate: INFO
 
 
